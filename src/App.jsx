@@ -1,23 +1,18 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Sidebar from './Components/SideBar/SideBar';
-import Dashboard from './Modules/Dashboard/DashBoard'; // Import your dashboard
-// Import other components (Calendar, TeachersList, etc.)
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Sidebar from "./Components/SideBar/SideBar";
+import AppRoutes from "../src/Routes/AppRoutes";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: "flex" }}>
+        {/* Sidebar always visible */}
         <Sidebar />
-        <div style={{ flex: 1, padding: '20px' }}>
-          <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
-            {/* Add routes for other pages here */}
-            {/* <Route path="/calendar" element={<Calendar />} /> */}
-            {/* <Route path="/teachers/list" element={<TeachersList />} /> */}
-            {/* You can add more routes as needed */}
-          </Routes>
+
+        {/* Main content */}
+        <div style={{ flex: 1, padding: "20px" }}>
+          <AppRoutes />
         </div>
       </div>
     </BrowserRouter>

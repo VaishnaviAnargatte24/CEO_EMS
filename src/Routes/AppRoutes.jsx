@@ -2,15 +2,17 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../Modules/Dashboard/DashBoard";
 
-// You can add more pages here later (like Students, Reports, etc.)
+
+
+
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* Dashboard Route */}
-      <Route path="/" element={<Dashboard />} />
+      {/* Dashboard */}
+      <Route path="/dashboard" element={<Dashboard />} />
 
-      {/* Example extra route */}
-      {/* <Route path="/students" element={<Students />} /> */}
+      {/* Default redirect */}
+      <Route path="*" element={<Dashboard />} />
     </Routes>
   );
 };
