@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../Modules/Dashboard/DashBoard.css";
 import Sidebar from "../../Components/SideBar/SideBar";
+import Header from "../../Components/Header/Header"; // NEW IMPORT
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, Legend,
   ResponsiveContainer, PieChart, Pie, Cell
@@ -39,29 +40,15 @@ const Dashboard = () => {
       {/* Sidebar */}
       <Sidebar isOpen={isSidebarOpen} />
 
-      {/* Mobile overlay (now actually activates) */}
+      {/* Mobile overlay */}
       <div
         className={`sidebar-overlay ${isSidebarOpen ? "active" : ""}`}
         onClick={closeSidebar}
       />
 
-      {/* Main */}
+      {/* Main Content */}
       <div className="main-content">
-        {/* Top Navbar */}
-        <div className="top-navbar">
-          <div className="logo">
-            <button className="menu-icon" onClick={toggleSidebar} aria-label="Open menu">
-              &#9776;
-            </button>
-            <img src="/logo.png" alt="Concept School" />
-            <h1>CONCEPT SCHOOL</h1>
-          </div>
-          <img
-            src="https://via.placeholder.com/80"
-            alt="Profile"
-            className="profile-avatar"
-          />
-        </div>
+        <Header toggleSidebar={toggleSidebar} /> {/* <-- ADDED HERE */}
 
         <div className="page-wrap">
           <h2 className="dashboard-header">Dashboard</h2>
@@ -85,7 +72,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Stats */}
+          {/* Statistics */}
           <h3 className="section-title">Statistics</h3>
           <div className="filters">
             <select>
@@ -107,8 +94,8 @@ const Dashboard = () => {
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Bar dataKey="class11" fill="#a855f7" name="11th Class" radius={[6,6,0,0]} />
-                  <Bar dataKey="class12" fill="#4c1d95" name="12th Class" radius={[6,6,0,0]} />
+                  <Bar dataKey="class11" fill="#a855f7" name="11th Class" radius={[6, 6, 0, 0]} />
+                  <Bar dataKey="class12" fill="#4c1d95" name="12th Class" radius={[6, 6, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
