@@ -1,13 +1,8 @@
 // src/Components/SideBar/SideBar.jsx
 import React, { useState } from "react";
 import {
-  FaThLarge,
-  FaCalendarAlt,
-  FaChalkboardTeacher,
-  FaUserGraduate,
-  FaMoneyCheckAlt,
-  FaUser,
-  FaSignOutAlt,
+  FaThLarge, FaCalendarAlt, FaChalkboardTeacher, FaUserGraduate,
+  FaMoneyCheckAlt, FaUser, FaSignOutAlt
 } from "react-icons/fa";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
@@ -21,14 +16,13 @@ const Sidebar = ({ isOpen }) => {
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <ul>
-        {/* Dashboard Link */}
         <li className={location.pathname === "/dashboard" ? "active" : ""}>
           <Link to="/dashboard">
             <FaThLarge className="icon" />
             <span>Dashboard</span>
           </Link>
         </li>
-        {/* Calendar Link */}
+
         <li className={location.pathname === "/calendar" ? "active" : ""}>
           <Link to="/calendar">
             <FaCalendarAlt className="icon" />
@@ -36,13 +30,10 @@ const Sidebar = ({ isOpen }) => {
           </Link>
         </li>
 
-        {/* Teachers Dropdown */}
-        <li
-          onClick={() => setOpenTeachers(!openTeachers)}
-          className={`dropdown ${openTeachers ? "open" : ""}`}
-        >
+        {/* Teachers */}
+        <li className="dropdown" onClick={() => setOpenTeachers((s) => !s)}>
           <FaChalkboardTeacher className="icon" />
-          <span>Teachers</span>
+          <span style={{ flex: 1 }}>Teachers</span>
           {openTeachers ? <FiChevronUp /> : <FiChevronDown />}
         </li>
         {openTeachers && (
@@ -62,13 +53,10 @@ const Sidebar = ({ isOpen }) => {
           </ul>
         )}
 
-        {/* Students Dropdown */}
-        <li
-          onClick={() => setOpenStudents(!openStudents)}
-          className={`dropdown ${openStudents ? "open" : ""}`}
-        >
+        {/* Students */}
+        <li className="dropdown" onClick={() => setOpenStudents((s) => !s)}>
           <FaUserGraduate className="icon" />
-          <span>Students</span>
+          <span style={{ flex: 1 }}>Students</span>
           {openStudents ? <FiChevronUp /> : <FiChevronDown />}
         </li>
         {openStudents && (
@@ -84,24 +72,21 @@ const Sidebar = ({ isOpen }) => {
             </li>
           </ul>
         )}
-        
-        {/* Fees Link */}
+
         <li className={location.pathname === "/fees" ? "active" : ""}>
           <Link to="/fees">
             <FaMoneyCheckAlt className="icon" />
             <span>Fees</span>
           </Link>
         </li>
-        
-        {/* Profile Link */}
+
         <li className={location.pathname === "/profile" ? "active" : ""}>
           <Link to="/profile">
             <FaUser className="icon" />
             <span>Profile</span>
           </Link>
         </li>
-        
-        {/* Logout Link */}
+
         <li className={location.pathname === "/logout" ? "active" : ""}>
           <Link to="/logout">
             <FaSignOutAlt className="icon" />
