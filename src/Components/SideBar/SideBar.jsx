@@ -60,8 +60,8 @@ const Sidebar = ({ isOpen }) => {
         </li>
         {openStudents && (
           <ul className="submenu">
-            <li className={location.pathname === "/students/attendance" ? "active" : ""}>
-              <Link to="/students/attendance">Attendance</Link>
+            <li className={location.pathname === "/students/attendence" ? "active" : ""}>
+              <Link to="/students/attendence">Attendence</Link>
             </li>
             <li className={location.pathname === "/students/exams" ? "active" : ""}>
               <Link to="/students/exams">Exams</Link>

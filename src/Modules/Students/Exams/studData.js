@@ -1,0 +1,22 @@
+export const students = [
+  { id: 1, name: "Priya Patel", exam: "NEET", date: "05/01/2025" },
+  { id: 2, name: "Ananya Desai", exam: "JEE", date: "05/01/2025" },
+  { id: 3, name: "Kavya Nair", exam: "NEET", date: "05/01/2025" },
+  { id: 4, name: "Arjun Malhotra", exam: "JEE", date: "05/01/2025" },
+  { id: 5, name: "Aisha Sharma", exam: "NEET", date: "05/01/2025" },
+  { id: 6, name: "Amit Kumar", exam: "JEE", date: "05/01/2025" },
+  { id: 7, name: "Siddharth Bhatia", exam: "NEET", date: "05/01/2025" },
+  { id: 8, name: "Isha Gupta", exam: "JEE", date: "05/01/2025" },
+  { id: 9, name: "Arjun Sharma", exam: "NEET", date: "05/01/2025" },
+  { id: 10, name: "Meera Kapoor", exam: "JEE", date: "05/01/2025" },
+  { id: 11, name: "Rohan Mehta", exam: "NEET", date: "05/01/2025" },
+  { id: 12, name: "Tanvi Joshi", exam: "JEE", date: "05/01/2025" },
+  { id: 13, name: "Vikram Singh", exam: "NEET", date: "05/01/2025" },
+  { id: 14, name: "Nisha Verma", exam: "JEE", date: "05/01/2025" },
+  { id: 15, name: "Kabir Khan", exam: "NEET", date: "05/01/2025" },
+  { id: 16, name: "Aarav Patel", exam: "JEE", date: "05/01/2025" },
+  { id: 17, name: "Diya Reddy", exam: "NEET", date: "05/01/2025" },
+  { id: 18, name: "Kabir Malhotra", exam: "JEE", date: "05/01/2025" },
+  { id: 19, name: "Riya Kapoor", exam: "NEET", date: "05/01/2025" },
+  { id: 20, name: "Aditya Sharma", exam: "JEE", date: "05/01/2025" }
+];
