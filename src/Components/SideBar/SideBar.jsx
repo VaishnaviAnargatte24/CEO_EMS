@@ -1,4 +1,3 @@
-// src/Components/SideBar/SideBar.jsx
 import React, { useState } from "react";
 import {
   FaThLarge, FaCalendarAlt, FaChalkboardTeacher, FaUserGraduate,
@@ -23,10 +22,10 @@ const Sidebar = ({ isOpen }) => {
           </Link>
         </li>
 
-        <li className={location.pathname === "/calendar" ? "active" : ""}>
-          <Link to="/calendar">
+        <li className={location.pathname === "/calender" ? "active" : ""}>
+          <Link to="/calender">
             <FaCalendarAlt className="icon" />
-            <span>Calendar</span>
+            <span>Calender</span>
           </Link>
         </li>
 
@@ -38,17 +37,17 @@ const Sidebar = ({ isOpen }) => {
         </li>
         {openTeachers && (
           <ul className="submenu">
-            <li className={location.pathname === "/teachers/list" ? "active" : ""}>
-              <Link to="/teachers/list">List</Link>
+            <li className={location.pathname === "/teacher/list" ? "active" : ""}>
+              <Link to="/teacher/list">List</Link>
             </li>
-            <li className={location.pathname === "/teachers/papers" ? "active" : ""}>
-              <Link to="/teachers/papers">Papers</Link>
+            <li className={location.pathname === "/teacher/papers" ? "active" : ""}>
+              <Link to="/teacher/papers">Papers</Link>
             </li>
-            <li className={location.pathname === "/teachers/question-bank" ? "active" : ""}>
-              <Link to="/teachers/question-bank">Question Bank</Link>
+            <li className={location.pathname === "/teacher/questionbank" ? "active" : ""}>
+              <Link to="/teacher/questionbank">Question Bank</Link>
             </li>
-            <li className={location.pathname === "/teachers/salary" ? "active" : ""}>
-              <Link to="/teachers/salary">Salary</Link>
+            <li className={location.pathname === "/teacher/salary" ? "active" : ""}>
+              <Link to="/teacher/salary">Salary</Link>
             </li>
           </ul>
         )}

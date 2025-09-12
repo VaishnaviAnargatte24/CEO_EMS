@@ -1,0 +1,237 @@
+
+/* Page background & base */
+.qb-root {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+  padding: 22px;
+  background: #f6f7fa;   /* background color */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header */
+.qb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.qb-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-icon { font-size: 18px; opacity: .9; }
+.qb-title { font-weight: 700; font-size: 20px; }
+
+.qb-controls { display:flex; gap: 10px; align-items:center; }
+
+.select-wrap select {
+  padding: 6px 25px;
+  border-radius: 25px;
+ background: white;
+}
+
+/* wrapper */
+.qb-container { display:block; }
+.qb-wrapper { max-width: 1180px; margin: 0 auto; }
+
+.qb-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom: 12px;
+}
+
+.course { margin:0; font-size:18px; }
+.meta { color:#666; font-size:13px; }
+
+/* divider */
+.divider { height:1px; background:#e6e8ee; margin:12px 0 18px; border-radius:2px; }
+
+/* Questions grid (2 columns) */
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* card */
+.question-card {
+  background-color: #F6F7FA;        /* card color (soft white) */
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(28,34,49,0.04);
+  border: 1px solid rgba(236,239,246,0.9);
+}
+
+/* smaller variant for tighter layout */
+.small-card { padding: 16px; }
+
+/* header inside card */
+.q-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: 12px;
+}
+
+.q-number { margin:0; font-size:15px; font-weight:600; color:#2b2f36; }
+.timer {
+  background:#e6e9f6;
+  color:#4d5ab8;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.q-sep { border: none; height: 1px; background: #eceef6; margin: 10px 0; }
+
+.q-text { color:#555b66; line-height:1.35; margin: 6px 0 12px; font-size:13px; }
+
+/* choices grid inside each card (compact) */
+.choices-grid.compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.choice-compact {
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #3a3f48;
+  font-weight: 600;
+}
+
+.choice-compact input {
+  margin-right: 8px;
+}
+
+/* Proper fraction style */
+.fraction {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+  margin-left: 6px;
+}
+
+.fraction .num {
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1.5px solid #333;
+  padding: 0 4px;
+}
+
+.fraction .den {
+  font-size: 13px;
+  padding-top: 2px;
+}
+
+
+/* bottom row small */
+.bottom-row.small {
+  display:flex;
+  gap: 40px;
+  margin-top: 12px;
+  align-items:center;
+}
+
+.pill { display:flex; align-items:center; gap:8px; color:#4a4f59; font-weight:600; }
+.pill input { transform: scale(1.02); }
+
+
+
+/* Large screens (very wide monitors) — keep 2 columns but increase max width */
+@media (min-width: 1280px) {
+  .qb-wrapper { max-width: 1300px; }
+  .questions-grid { gap: 26px; }
+  .question-card { padding: 20px; }
+  .small-card { padding: 18px; }
+  .q-text { font-size: 14px; }
+}
+
+/* Desktop / small laptop */
+@media (min-width: 992px) and (max-width: 1279px) {
+  .qb-wrapper { max-width: 1100px; }
+  .questions-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .question-card { padding: 18px; }
+}
+
+/* Tablet landscape / medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+  .qb-wrapper { max-width: 880px; padding: 0 16px; }
+  .questions-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .question-card { padding: 16px; }
+  .q-number { font-size: 14px; }
+  .timer { padding: 5px 9px; font-size: 11px; }
+  .frac { font-size: 12px; padding: 5px 6px; }
+  .bottom-row.small { gap: 28px; }
+}
+
+/* Tablet portrait / phablet */
+@media (min-width: 600px) and (max-width: 767px) {
+  .qb-wrapper { max-width: 700px; padding: 0 14px; }
+  .questions-grid { grid-template-columns: 1fr; gap: 16px; }
+  .question-card { padding: 16px; }
+  .q-text { font-size: 13px; }
+  .fraction .num { font-size: 13px; border-bottom-width: 1.2px; }
+  .fraction .den { font-size: 12px; }
+  .choices-grid.compact { gap: 6px; }
+  .bottom-row.small { gap: 20px; }
+}
+
+/* Mobile (small) — single column, tighten spacing, touch friendly) */
+@media (max-width: 599px) {
+  .qb-root { padding: 12px; }
+  .qb-wrapper { max-width: 100%; padding: 0 12px; }
+  .questions-grid { grid-template-columns: 1fr; gap: 12px; }
+  .question-card { padding: 12px; border-radius: 10px; }
+  .small-card { padding: 12px; }
+  .q-number { font-size: 14px; }
+  .q-text { font-size: 13px; line-height: 1.4; }
+  .timer { padding: 4px 8px; font-size: 11px; }
+  .choices-grid.compact { grid-template-columns: 1fr; gap: 8px; }
+  .choice-compact { padding: 8px 6px; }
+  .fraction .num { font-size: 13px; border-bottom-width: 1px; }
+  .fraction .den { font-size: 12px; }
+  .frac { font-size: 11px; padding: 4px 6px; }
+  .bottom-row.small { gap: 16px; justify-content: flex-start; flex-wrap: wrap; }
+  .pill { gap: 10px; font-size: 14px; }
+  .pill input { transform: scale(1.12); }
+
+  /* make selects stack and fit on small screens */
+  .qb-controls { flex-direction: column; align-items: stretch; gap: 10px; }
+  .select-wrap select { width: 100%; padding: 8px 14px; border-radius: 14px; }
+
+  /* reduce card shadow to keep page light on mobile */
+  .question-card { box-shadow: 0 4px 10px rgba(28,34,49,0.03); }
+}
+
+/* Accessibility / focus tweaks for small devices when tapping */
+@media (hover: none) and (pointer: coarse) {
+  .choice-compact:active,
+  .pill:active {
+    transform: translateY(0.5px);
+  }
+}
+
+/* Tweak for very narrow screens to reduce overflow */
+@media (max-width: 360px) {
+  .q-text { font-size: 12px; }
+  .choice-compact { font-size: 14px; }
+  .fraction .num { font-size: 12px; }
+  .fraction .den { font-size: 11px; }
+  .timer { font-size: 10px; padding: 3px 7px; }
+}
+

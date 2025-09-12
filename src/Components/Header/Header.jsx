@@ -6,21 +6,15 @@ import "./Header.css";
 import SchoolLogo from "../../assets/Images/concept_school_logo.png";
 import ProfileImage from "../../assets/Images/Profile_image.png";
 
-const Header = ({ toggleSidebar }) => {
+const Header = () => {
   return (
     <header className="top-navbar">
       <div className="logo">
-        <button className="menu-icon" onClick={toggleSidebar} aria-label="Open menu">
-          &#9776;
-        </button>
         <img src={SchoolLogo} alt="Concept School" className="school-logo" />
       </div>
 
-      <img
-        src={ProfileImage}
-        alt="Profile"
-        className="profile-avatar"
-      />
+      {/* Profile Image */}
+      <img src={ProfileImage} alt="Profile" className="profile-avatar" />
     </header>
   );
 };
